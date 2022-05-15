@@ -61,54 +61,51 @@ public class Program {
 		ArrayList<ArrayList<ListaAdjacentes>> grafo = new ArrayList<>();
 		a.criaGrafo(vertices, grafo);
 		a.setAdjacentes(vertices, arestas, grafo);
-		
-		
+
 		do {
 			menu();
 			op = in.nextInt();
-			switch(op) {
-			case 1:
-				a.printarAdjacentes(grafo);
-				break;
-			case 2:
-				System.out.println("Qual vértice você deseja calcular o menor caminho? 1-26");
-				verticeFonte = in.nextInt();
-				while(verticeFonte < 1 || verticeFonte > 26) {
-					System.out.println("Vértice inválido");
-					System.out.println("Qual vértice você deseja calcular o menor caminho? 1-26");
+			switch (op) {
+				case 1:
+					a.printarAdjacentes(grafo);
+					break;
+				case 2:
+					System.out.println("Qual vï¿½rtice vocï¿½ deseja calcular o menor caminho? 1-26");
 					verticeFonte = in.nextInt();
-				}
-				a.printMenorCaminhoDijkstra(tamanho, grafo, verticeFonte, vertices);
-				break;
-			case 3:
-				System.out.println("Qual vértice você deseja calcular o menor caminho? 1-26");
-				verticeFonte = in.nextInt();
-				while(verticeFonte < 1 || verticeFonte > 26) {
-					System.out.println("Vértice inválido");
-					System.out.println("Qual vértice você deseja calcular o menor caminho? 1-26");
+					while (verticeFonte < 1 || verticeFonte > 26) {
+						System.out.println("Vï¿½rtice invï¿½lido");
+						System.out.println("Qual vï¿½rtice vocï¿½ deseja calcular o menor caminho? 1-26");
+						verticeFonte = in.nextInt();
+					}
+					a.printMenorCaminhoDijkstra(tamanho, grafo, verticeFonte, vertices);
+					break;
+				case 3:
+					System.out.println("Qual vï¿½rtice vocï¿½ deseja calcular o menor caminho? 1-26");
 					verticeFonte = in.nextInt();
-				}
-				a.printMenorCaminhoBL(tamanho, grafo, verticeFonte, vertices);
-				break;
-				
+					while (verticeFonte < 1 || verticeFonte > 26) {
+						System.out.println("Vï¿½rtice invï¿½lido");
+						System.out.println("Qual vï¿½rtice vocï¿½ deseja calcular o menor caminho? 1-26");
+						verticeFonte = in.nextInt();
+					}
+					a.printMenorCaminhoBL(tamanho, grafo, verticeFonte, vertices);
+					break;
+
 			}
-		}while( op != 0);
+		} while (op != 0);
 		//////////////////////// ADICIONANDO OS ADJACENTES////////////////////////
-		
-		//a.printarAdjacentes(grafo);
-		
-		
-		
+
+		// a.printarAdjacentes(grafo);
+
 		/////////////////////// DIJKSTRA////////////////////////////////////////////
-		//a.printMenorCaminhoDijkstra(tamanho, grafo, verticeFonte, vertices);		
-		/////////////////// BUSCA EM LARGURA///////////////////////////////////////				
-		//a.printMenorCaminhoBL(tamanho, grafo, verticeFonte, vertices);
-		
+		// a.printMenorCaminhoDijkstra(tamanho, grafo, verticeFonte, vertices);
+		/////////////////// BUSCA EM LARGURA///////////////////////////////////////
+		// a.printMenorCaminhoBL(tamanho, grafo, verticeFonte, vertices);
 
 	}
+
 	public static void menu() {
 		System.out.println("BEM VINDO");
-		System.out.println("1 - Exibir grafo e seus vértices ( com adjacência )");
+		System.out.println("1 - Exibir grafo e seus vï¿½rtices ( com adjacï¿½ncia )");
 		System.out.println("2 - Aplicar o algoritmo de Dijkstra");
 		System.out.println("3 - Aplicar o algoritmo da busca em largura");
 		System.out.println("0 - Encerrar");
